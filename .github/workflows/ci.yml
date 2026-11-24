@@ -28,13 +28,13 @@ jobs:
       uses: actions/upload-pages-artifact@v3
       with:
        path: public
-deploiement:
- needs: verification # Attend le succes du premier job
- runs-on: ubuntu-latest
- environment:
-  name: github-pages
-  url: ${{ steps.deployment.outputs.page_url }}
- steps:
-  - name: Deployer le site
-    id: deployment
-    uses: actions/deploy-pages@v4
+ deploiement:
+  needs: verification # Attend le succes du premier job
+  runs-on: ubuntu-latest
+  environment:
+   name: github-pages
+   url: ${{ steps.deployment.outputs.page_url }}
+  steps:
+   - name: Deployer le site
+     id: deployment
+     uses: actions/deploy-pages@v4
