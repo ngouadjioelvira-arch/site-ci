@@ -1,0 +1,9 @@
+name: tp-afrikatech 
+services: 
+  web: 
+    image: nginx:alpine 
+    ports: 
+     - "8081:80" 
+    volumes: 
+     - ./site:/usr/share/nginx/html:ro 
+    restart: unless-stopped 
