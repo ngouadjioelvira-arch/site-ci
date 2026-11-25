@@ -1,9 +1,6 @@
-name: tp-afrikatech 
-services: 
-  web: 
-    image: nginx:alpine 
-    ports: 
-     - "8081:80" 
-    volumes: 
-     - ./site:/usr/share/nginx/html:ro 
-    restart: unless-stopped 
+services:
+ web: # Nom du service
+   build: . # Construire depuis le Dockerfile
+   ports:
+     - "127.0.0.1:8081:80" # Port local : port interne
+   restart: unless-stopped # Redémarrage automatique
